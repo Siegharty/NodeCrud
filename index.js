@@ -1,5 +1,6 @@
 //Imports
 const express = require('express');
+const expressLayouts = require('express-ejs-layouts');
 const dotenv = require('dotenv');
 const path = require('path');
 
@@ -15,6 +16,7 @@ const app = express();
 //Configuracion de ejs
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use(expressLayouts);
 
 //Uso de carpeta public
 app.use(express.static('./public'));
