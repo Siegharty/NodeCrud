@@ -1,18 +1,26 @@
 //Imports
 const express = require('express');
 const dotenv = require('dotenv');
+const path = require('path');
 
 //Variables de entorno
 dotenv.config({ path: './config/config.env' });
 const PORT = process.env.PORT;
 
 //Router handler
-var route = require('./routes/index');
+const router = require('./routes/index');
 
 const app = express();
 
-//Uso de middlewares
-app.use('/', route);
+//Configuracion de ejs
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+//Uso de carpeta public
+app.use(express.static('./public'));
+
+//Uso de rutas
+app.use('/', router);
 
 app.listen(PORT, () => {
     console.log(`Servidor escuchando en puerto ${PORT}`);

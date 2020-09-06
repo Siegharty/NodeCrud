@@ -2,7 +2,7 @@ const express = require('express');
 const contacto = express.Router();
 
 contacto.get('/', (req, res, next) => {
-    res.send('Contacto con router');
+    res.render('../views/pages/contacto');
 });
 
 module.exports = contacto;
