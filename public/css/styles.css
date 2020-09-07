@@ -34,8 +34,8 @@
 	1. Google Fonts
 ===============================*/
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,600');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600');
+@import url('/lib/fontawesome/fonts/Roboto.css');
+@import url('/lib/fontawesome/fonts/Montserrat.css');
 
 
 
